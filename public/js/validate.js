@@ -10,8 +10,8 @@ document.querySelector(".form-submit").addEventListener("click", function(event)
   button.disabled = true;
 
   setTimeout(() => {
-      if (username === "HoPhuong" && password === "25062023") {
-          window.location.href = "home"; // Chuyển hướng đến trang chủ
+      if (username === "HoPhuong" && password === "31122003") {
+          window.location.href = "love"; // Chuyển hướng đến trang chủ
           button.innerHTML = "Sign up"; // Trả lại trạng thái ban đầu
           button.disabled = false;
       } else {

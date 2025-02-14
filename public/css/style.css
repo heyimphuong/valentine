@@ -164,7 +164,7 @@ body {
   height: 170%;
   /* position: relative; */
   position: absolute;
-  background-image: url(/image/anh3.jpg);
+  background-image: url(/image/anh1.jpg);
   /* backdrop-filter: blur(1px); */
   z-index: 2;
   filter: blur(13px);
@@ -178,7 +178,7 @@ body {
   width: 1090px;
   z-index: 3;
   height: 580px;
-  background-image: url(/image/anh3.jpg);
+  background-image: url(/image/anh1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;

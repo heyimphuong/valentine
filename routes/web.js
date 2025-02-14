@@ -15,6 +15,8 @@ export const initWebRoutes = (app) => {
     // Trang chủ (nếu cần sau khi đăng nhập)
     router.get("/home", homeController.getHomePage);
 
+    router.get("/love", homeController.getLovePage);
+
     return app.use("/", router);
 };
 
