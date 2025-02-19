@@ -1,17 +1,22 @@
-const getHomePage = (req, res) => {
-  res.render("home"); // Hiển thị trang home.ejs
+const getLoginPage = (req, res) => {
+  res.render("login.ejs", { errorMessage: null });
 };
 
-const getLoginPage = (req, res) => {
-  res.render("login"); // Hiển thị trang login.ejs
+const getRegisterPage = (req, res) => {
+  return res.render("register.ejs");
+};
+
+const getHomePage = (req, res) => {
+  return res.render("home.ejs");
 };
 
 const getLovePage = (req, res) => {
-  res.render("love"); // Hiển thị trang login.ejs
+  return res.render("love.ejs");
 };
 
 export default {
-  getHomePage,
   getLoginPage,
+  getRegisterPage,
+  getHomePage,
   getLovePage,
 };

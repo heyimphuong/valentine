@@ -1,5 +1,6 @@
 import express from "express";
 import homeController from "../controllers/homeController.js";
+import authController from "../controllers/authController.js";
 
 const router = express.Router();
 
@@ -9,12 +10,22 @@ export const initWebRoutes = (app) => {
         res.redirect("/login");
     });
 
-    // Trang đăng nhập
+    // Hiển thị trang đăng nhập
     router.get("/login", homeController.getLoginPage);
 
-    // Trang chủ (nếu cần sau khi đăng nhập)
+    // Xử lý đăng nhập
+    router.post("/login", authController.login);
+
+    // Hiển thị trang đăng ký
+    router.get("/register", homeController.getRegisterPage);
+
+    // Xử lý đăng ký tài khoản
+    router.post("/register", authController.register);
+
+    // Trang chủ sau khi đăng nhập thành công
     router.get("/home", homeController.getHomePage);
 
+    // Trang love (nếu cần)
     router.get("/love", homeController.getLovePage);
 
     return app.use("/", router);

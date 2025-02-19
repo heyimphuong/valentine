@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>Login</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -26,7 +26,8 @@
             </div>
             <div class="register">
                 <div>Tình Yêu Đẹp Khi Gặp Đúng Người.💖</div>
-                <p>Đăng nhập ngay để tận hưởng những khoảnh khắc ngọt ngào và cùng nhau xây dựng những kỷ niệm đẹp trong thế giới của riêng bạn.</p>
+                <p>Đăng nhập ngay để tận hưởng những khoảnh khắc ngọt ngào và cùng nhau xây dựng những kỷ niệm đẹp trong
+                    thế giới của riêng bạn.</p>
                 <div class="social">
                     <a data-toggle="tooltip" title="Facebook" href=""><i class="fab fa-facebook-f"></i></a>
                     <a data-toggle="tooltip" title="Google" href=""><i class="fab fa-google"></i></a>
@@ -36,44 +37,86 @@
             </div>
         </div>
 
-        <div class="form-login">
-            <form action="" method="POST" class="form" id="form-2">
+        <div class="form-login" id="loginForm">
+            <form action="/login" method="POST" class="form" id="form-2">
                 <h3 class="heading" style="text-align: center;">Login</h3>
                 <div class="spacer"></div>
 
-                <div class="form-group">
-                    <label for="email" class="form-label">Username</label>
-                    <input id="username" type="text" placeholder="VD: AnhThoCode (Viết hoa chữ cái đầu)" class="form-control">
-                    <span class="form-message"></span>
-                </div>
+                <% if (errorMessage) { %>
+                    <p style="color: red; text-align: center;">
+                        <%= errorMessage %>
+                    </p>
+                    <% } %>
+
+                        <div class="form-group">
+                            <label for="username" class="form-label">Username</label>
+                            <input id="username" name="username" type="text" placeholder="VD: AnhThoCode"
+                                class="form-control" required>
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <input id="password" name="password" type="password" placeholder="Enter password"
+                                class="form-control" required>
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group f-term">
+                            <input id="agree" name="agree" type="checkbox" class="form-control">
+                            <label for="agree" class="form-label">I agree to the all statements in <a href="">Terms of
+                                    service</a></label>
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="sign-up">
+                            <div>
+                                <button type="submit" class="form-submit">Login</button>
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                            <a href="#" id="registerLink">Create an account?</a>
+                        </div>
+            </form>
+        </div>
+
+        <!-- Form Sign Up (ẩn đi mặc định) -->
+        <div class="form-login" id="registerForm" style="display: none;">
+            <form id="registerFormElement" class="modal-content" action="/register" method="POST">
+                <h3 class="heading" style="text-align: center;">Sign Up</h3>
+                <p style="text-align: center;">Please fill in this form to create an account.</p>
+                <hr>
 
                 <div class="form-group">
-                    <label for="password" class="form-label">Password</label>
-                    <input id="password" name="password" type="password" placeholder="Enter password (Ngày Đầu Tiên Nhắn)"
-                        class="form-control">
-                    <span class="form-message"></span>
+                    <label for="register-username" class="form-label"><b>Username</b></label>
+                    <input id="register-username" type="text" placeholder="Enter Username" class="form-control"
+                        name="username" required>
                 </div>
 
-                <div class="form-group f-term">
-                    <input id="agree" name="agree" type="checkbox" class="form-control">
-                    <label for="agree" class="form-label">I agree to the all statements in <a href="">Terms of
-                            service</a></label>
-                    <span class="form-message"></span>
+                <div class="form-group">
+                    <label for="register-password"><b>Password</b></label>
+                    <input id="register-password" type="password" placeholder="Enter Password" name="password" required>
                 </div>
 
-                <div class="sign-up">
-                    <div>
-                        <button class="form-submit">Sign up</button>
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
-                    <a href="">Have an account?</a>
+                <div class="form-group">
+                    <label for="register-password-repeat"><b>Repeat Password</b></label>
+                    <input id="register-password-repeat" type="password" placeholder="Repeat Password"
+                        name="password-repeat" required>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                    </label>
+                </div>
+
+                <div class="clearfix">
+                    <button type="button" id="cancelRegister" class="cancelbtn">Cancel</button>
+                    <button type="submit" class="signupbtn">Sign Up</button>
                 </div>
             </form>
         </div>
     </div>
 
-
-    <script src="/js/validate.js"></script>
+    <script src="/js/handlelogin.js"></script>
 </body>
 
 </html>

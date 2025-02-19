@@ -218,7 +218,7 @@ body {
 .register>p {
   font-size: 14px;
   line-height: 1.4;
-  color: rgb(18, 18, 18);
+  color: rgb(232, 226, 226);
   margin-bottom: 24px;
 }
 
@@ -231,7 +231,7 @@ body {
 }
 
 .register .social i {
-  color: rgb(15, 15, 15);
+  color: rgb(236, 229, 229);
   font-size: 15px;
 }
 
@@ -375,7 +375,7 @@ body {
     padding: 40px;
   }
 
-  .login-container > div:first-child {
+  .login-container>div:first-child {
     max-width: 100%;
     padding: 20px;
   }
@@ -422,11 +422,11 @@ body {
     padding: 20px;
   }
 
-  .register > div:first-child {
+  .register>div:first-child {
     font-size: 24px;
   }
 
-  .register > p {
+  .register>p {
     font-size: 12px;
   }
 
@@ -439,6 +439,142 @@ body {
   }
 
   .form-login .form .sign-up button {
+    font-size: 14px;
+    height: 40px;
+  }
+}
+
+/* Form styling */
+.form-login,
+#registerForm {
+  width: 38%;
+  max-width: 450px;
+  height: auto;
+  backdrop-filter: blur(8px);
+  background-color: rgba(54, 52, 52, 0.2);
+  padding: 50px 30px;
+  border: 2px solid red;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#registerForm {
+  display: none;
+}
+
+.form-login .form-group,
+#registerForm .form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.form-login .form-group input,
+#registerForm .form-group input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(159, 171, 175, 0.534);
+  margin-top: 10px;
+  color: white;
+  font-size: 16px;
+  padding: 8px;
+}
+
+.form-login .form-group input::placeholder,
+#registerForm .form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.658);
+  opacity: 1;
+}
+
+.form-login .heading,
+#registerForm .heading {
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.form-login .sign-up,
+#registerForm .sign-up,
+.form-login .clearfix,
+#registerForm .clearfix {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form-login .sign-up button,
+#registerForm .sign-up button,
+.form-login .clearfix button,
+#registerForm .clearfix button {
+  background-color: rgb(211, 37, 37);
+  color: rgb(238, 227, 227);
+  width: 48%;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.form-login .sign-up button:hover,
+#registerForm .sign-up button:hover,
+.form-login .clearfix button:hover,
+#registerForm .clearfix button:hover {
+  background-color: rgb(143, 24, 24);
+  cursor: pointer;
+}
+
+.sign-up a {
+  margin-left: 10px;
+  color: rgb(190, 189, 187);
+  font-size: 14px;
+  text-underline-position: under;
+}
+
+.sign-up a:hover {
+  color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+    padding: 40px;
+  }
+
+  .form-login,
+  #registerForm {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .form-login,
+  #registerForm {
+    padding: 30px 15px;
+  }
+
+  .form-login .form-group input,
+  #registerForm .form-group input {
+    font-size: 14px;
+  }
+
+  .form-login .sign-up button,
+  #registerForm .sign-up button,
+  .form-login .clearfix button,
+  #registerForm .clearfix button {
     font-size: 14px;
     height: 40px;
   }
